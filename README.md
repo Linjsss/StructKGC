@@ -27,12 +27,17 @@ Step 2, preprocess the dataset
 ```
 bash scripts/preprocess.sh FB15k237
 ```
-Step 3, training the model and (optionally) specify the output directory (< 3 hours)
+Step 3, extract paths for the Dataset
+
+Before running the model, you need to generate the path information for the dataset (path extraction).
+We follow a path extraction procedure similar to PTransE. You may refer to [PtransE](https://github.com/Mrlyk423/Relation_Extraction/blob/master/PTransE/PCRA.py)
+
+Step 4, training the model and (optionally) specify the output directory (< 3 hours)
 ```
 OUTPUT_DIR=./checkpoint/fb15k237/ bash scripts/train_fb.sh
 ```
 
-Step 4, evaluate a trained model
+Step 5, evaluate a trained model
 ```
 bash scripts/eval.sh ./checkpoint/fb15k237/model_last.mdl FB15k237
 ```
@@ -42,7 +47,7 @@ Feel free to change the output directory to any path you think appropriate.
 ### WN18RR dataset
 Step 1, extract the path from dataset
 
-Step 2, preprocess the dataset
+Step 2, preprocess the dataset and extract paths
 ```
 bash scripts/preprocess.sh WN18RR
 ```
@@ -54,4 +59,5 @@ OUTPUT_DIR=./checkpoint/wn18rr/ bash scripts/train_wn.sh
 Step 4, evaluate a trained model
 ```
 bash scripts/eval.sh ./checkpoint/wn18rr/model_last.mdl WN18RR
+
 
